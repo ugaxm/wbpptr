@@ -58,7 +58,7 @@ const sendMessageToDiscord = (content) => {
 
     await new Promise(r => setTimeout(r, 5000));
    
-    const elements = await page.$$('.weibo-member');
+    const elements = await page.$$('.wb-item');
     // 过滤1小时内的微博
     const effWeiboItems = await Promise.all(elements.map(async (ele, index) => {
         const eleTimeEl = await ele.$('.time');
@@ -67,9 +67,9 @@ const sendMessageToDiscord = (content) => {
             return ele;
         }
 
-        if (/1小时前/.test(eleTimeStr)) {
-            return ele;
-        }
+        // if (/1小时前/.test(eleTimeStr)) {
+        //     return ele;
+        // }
 
         return false;
     }));
@@ -78,5 +78,6 @@ const sendMessageToDiscord = (content) => {
     }).filter(Boolean));
 
     await sendMessageToDiscord(images);
+    // await page.screenshot({ path: 'sb.png', fullPage: true });
     await browser.close();
 })();
