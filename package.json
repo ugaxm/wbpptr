@@ -1,0 +1,28 @@
+{
+  "name": "github-action-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"good bye\"2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugaxm/github-action-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ugaxm/github-action-demo/issues"
+  },
+  "homepage": "https://github.com/ugaxm/github-action-demo#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "formstream": "^1.1.1",
+    "puppeteer-core": "^17.0.0",
+    "terminal-image": "^2.0.0",
+    "urllib": "^2.38.1"
+  }
+}
